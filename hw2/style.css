@@ -1,0 +1,607 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing:border-box;
+}
+
+.body{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+
+}
+
+.logoo{
+    
+    /* border: 1px solid red; */
+    width: 100%;
+    justify-content: center;
+    display: flex;
+    background-color:#434f53;
+    color: white;
+}
+
+.logoo .top{
+    /* border: 1px solid black; */
+    width: 1200px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* padding: 10px; */
+}
+.logoo .item{
+    display: flex;
+    align-items: center;
+}
+.top .item .p1:hover{
+    color: #FF9933;
+    
+}
+
+.full{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding: auto;
+    
+}
+.header{
+    width: 1200px;
+    display: flex;
+    border: 1px solid black;
+    justify-content: space-between;
+    align-items: center;
+}
+.header .logo{
+        display: flex;   
+}
+.logo p{
+    font-size: 50px;
+    color: #535353;
+    /* border: 1px solid black; */
+    margin: 0;
+    padding-left: 10px;
+}
+.logo img{
+    width: 60px;
+    height: 60px;
+    /* border: 1px solid black; */
+}
+.header .p2{
+    /* width: 170px; */
+    /* height: 70px; */
+    padding: 13px 30px;
+    font-size: 15px;
+    color:#FF9933;
+    border: 2px solid #FF9933;
+    display: flex;
+}
+.header .p2:hover{
+    background-color: #7ABEE9;
+    color: #FFFFFF;
+    border:2px solid #7ABEE9;
+    transition: 0.3s;
+}
+.header .menu {
+    /* border: 1px solid black; */
+    width: 500px;
+    justify-content: space-between;
+    display: flex;
+}
+.menu p:hover{
+    border-bottom: 1px solid orange;
+    /* padding: 5px; */
+}
+.page{
+    width: 1200px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 1px solid black;
+}
+.cat{
+    background-image: url(/作業_貓網/asset\ 9.jpeg);
+    height: 600px;
+    background-position: center;
+}
+.need{
+    border: 1px solid orangered;
+}
+.need .p1{
+    color: #535353;
+    font-size: 50px;
+    margin: 0;
+    
+    line-height: 1.5;
+}
+.need .p2{
+    color: #7ABEE9;
+    font-size: 80px;
+    margin: 0;
+}
+.need .p3{
+    color: #535353;
+    font-size: 24px;
+    margin: 0;
+}
+.need .p4{
+    width: 231px;
+    height: 65px;
+    /* padding: 0px 5px; */
+    font-size: 15px;
+    color:#FFFFFF;
+    background-color: orangered;
+    /* border: 2px solid #FF9933; */
+    display: flex;
+    /* margin-left: 555; */
+    align-items: center;
+    text-align: center;
+    padding-left: 25%;
+    
+}
+.need .p4:hover{
+    background-color: black;
+    /* width: 231px;
+    height: 65px; */
+    /* padding: 231px 70px; */
+    font-size: 15px;
+    color: #FFFFFF;
+    transition: 0.3s;
+}
+.girl .p1{
+    color: #535353;
+    font-size: 50px;
+    margin: 0;
+    
+    line-height: 1.5;
+}
+.girl .p2{
+    color: #7ABEE9;
+    font-size: 30px;
+    margin: 0; 
+    width: 570px;
+}
+.girl .p3{
+    color: #8D8D8D;
+    font-size: 15px;
+    width: 570px;
+
+}
+.girl .p4{
+    color: #8D8D8D;
+    font-size: 15px;
+    width: 570px;
+    
+    
+}
+
+.girl .p5{
+    width: 231px;
+    height: 65px;
+    padding: 0px 5px;
+    font-size: 15px;
+    color:#FFFFFF;
+    background-color: orangered;
+    /* border: 2px solid #FF9933; */
+    display: flex;
+    margin-left: 555;
+    align-items: center;
+    text-align: center;
+    padding-left: 25%;
+    
+}
+.girl .p5:hover{
+    background-color: black;
+    width: 231px;
+    height: 65px;
+    /* padding: 231px 70px; */
+    font-size: 15px;
+    color: #FFFFFF;
+    transition: 0.3s;
+}
+
+.lp .page{
+    flex-wrap:wrap
+}
+.pa1{
+    color: #535353;
+    font-size: 50px;
+    justify-content: center;
+    width: 1200px;
+    display: flex;
+    border: 1px solid black;
+    margin: 0px;
+}
+.pa2{
+    color: #7ABEE9;
+    font-size: 36px;
+    width: 1200px;
+    justify-content: center;
+    display: flex;
+    padding-top: 0px;
+    margin: 0px;
+    /* width: 100%; */
+    border: 1px solid black;
+    padding-bottom: 20px;
+}
+
+.picture1{
+    background-image: url(/作業_貓網/asset\ 10.jpeg);
+    width: 360px;
+    height: 370px;
+    text-align: center;
+    align-items: center;
+    font-size: 36px;
+    color: #FFFFFF;
+    
+    
+}
+.lp .picture1:hover{
+    color: #FF9933;
+}
+.picture2{
+    background-image: url(/作業_貓網/asset\ 11.jpeg);
+    width: 360px;
+    height: 370px;
+    text-align: center;
+    align-items: center;
+    font-size: 36px;
+    color: #FFFFFF;
+}
+.lp .picture2:hover{
+    color: #FF9933;
+}
+.picture3{
+    background-image: url(/作業_貓網/asset\ 12.jpeg);
+    width: 360px;
+    height: 370px;
+    text-align: center;
+    align-items: center;
+    font-size: 36px;
+    color: #FFFFFF;
+}
+.lp .picture3:hover{
+    color: #FF9933;
+}
+.lp{
+    background-color: #F9F9F9;
+    padding: 90px 0px;
+}
+.picture1 .e1{
+    padding-top: 70%;
+}
+.picture2 .e2{
+    padding-top: 70%;
+}
+.picture3 .e3{
+    padding-top: 70%;
+}
+.save .page{
+    /* height: 500px; */
+    border: 1px solid black;
+}
+.save img{
+    width: 470px;
+    height: 367px;
+}
+.now{
+    padding-right: 15px;
+}
+.save .now p{
+    text-align: right;
+    padding: 40px 0px 40px;
+    font-size: 50px; 
+    color: #535353;
+}
+.with{
+    
+    padding-left: 10%;
+}
+.with img{
+    width: 570px;
+    height: 393px;
+    padding-top: 90px;
+    
+}
+.with p{
+    color: #8D8D8D;
+    font-size: 36px;
+}
+
+.with .vo{
+    /* width: 335px;
+    height: 70px; */
+    /* padding: 0px 5px;
+    font-size: 36px;
+    color:#FFFFFF;
+    background-color: orangered; */
+    /* border: 2px solid #FF9933; */
+    /* display: flex;
+    margin-left: 555;
+    align-items: center;
+    text-align: center; */
+    /*padding-left: 25%; */
+
+    padding: 0px 5px;
+    font-size: 36px;
+    color:#FFFFFF;
+    background-color: orangered;
+    display: flex;
+    margin-left: 555;
+    
+}
+.with .vo:hover{
+    background-color: black;
+    /* width: 335px;
+    height: 70px; */
+    /* padding: 231px 70px; */
+    font-size: 36px;
+    color: #FFFFFF;
+    transition: 0.3s;
+
+    
+}
+.evnts{
+    border: 2px solid black;
+}
+.picture4{
+    background-image: url(/作業_貓網/asset\ 13.jpeg);
+    width: 1200px;
+    text-align: center;
+    align-items: center;
+    margin-top: 60px;
+    margin-bottom: 60px;
+}
+.nts{
+    color: #535353;
+    font-size: 50px;
+    margin: 0;
+    padding-top: 60px;
+}
+.ass{
+    color: #7ABEE9;
+    font-size: 60px;
+    margin: 0;
+}
+.th{
+    color: #535353;
+    font-size: 36px;
+    margin: 0;
+}
+.sl{
+    display:flex;
+    justify-content: space-evenly;
+    padding-bottom: 60px;
+}
+
+.ls{
+    
+    padding: 0px 5px;
+    font-size: 36px;
+    color:#FFFFFF;
+    background-color: orangered;
+    display: flex;
+    margin-left: 555;
+    
+    
+}
+.ls:hover{
+    background-color:#7ABEE9;
+    font-size: 36px;
+    color: #FFFFFF;
+    transition: 0.3s;
+}
+.al{
+    
+    padding: 0px 5px;
+    font-size: 36px;
+    color:#FFFFFF;
+    background-color: orangered;
+    display: flex;
+    margin-left: 555;
+    
+    
+}
+.al:hover{
+    background-color:#7ABEE9;
+    font-size: 36px;
+    color: #FFFFFF;
+    transition: 0.3s;
+}
+.dog{
+    height: 100vh;
+    width: 100%;
+    background-image: url('/作業_貓網/asset\ 15.jpeg');
+    background-size: cover;
+    background-attachment: fixed;
+    border-bottom: 20px solid #ff9933;
+}
+.caat{
+    display: flex;
+    text-align: center;
+    justify-content: space-between;
+    align-items: center;
+    border: 2px solid black;
+    
+}
+.papa{
+    text-align: center;
+    line-height: 1.5;
+    width: 1185px;
+    border: 2px solid red;
+    justify-content: space-between;
+}
+.papa .up{
+    color: #323041;
+    font-size: 48px;
+    font-weight: 1000;
+    margin: 0;
+}
+.papa .see{
+    color: #34c8e7;
+    font-size: 28px;
+    font-weight: 1000;
+    margin: 0;
+}
+.papa .item{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;    
+    margin: 35px;
+}
+.papa .you{
+    width: 100%;
+}
+.papa .img img{
+    margin-top: 58px;
+}
+.papa .yy{
+    border-radius: 100%;
+}
+.papa .img11{
+    margin: 5px;
+    width: 530px;
+    height: 380px;
+    background-image: url(/作業_貓網/asset\ 16.jpeg);
+    padding-top: 30px;
+}
+.papa .img12{
+    margin: 5px;
+    width: 530px;
+    height: 380px;
+    background-image: url(/作業_貓網/asset\ 17.jpeg);
+    padding-top: 30px;
+}
+.papa .img11 p{
+    color: white;
+    font-size: 16px;
+    width: 800;
+    
+}
+.papa .img12 p{
+    color: white;
+    font-size: 16px;
+    width: 800;
+    
+}
+
+.caat .page{
+    width: 100%;
+    justify-content: center;
+}
+.dog100{
+    background-image: url(/作業_貓網/asset\ 18.jpeg);
+    background-position:center ;
+    padding: 80px 200px;
+    margin: 0;
+}
+
+.dog100 .page{
+    width: 100%;
+    justify-content: space-evenly;
+}
+.dog100 p{
+    color: white;
+    font-weight: 1000;
+    text-align: center;
+}
+.dog100 .pa{
+    font-size: 50px;
+}
+.dog100 .pb{
+    font-size: 20px;
+    
+}
+.ig .page{
+    width: 100%;
+    justify-content: space-evenly;
+    margin: 90px;
+}
+.ig .page p{
+    color: #535353;
+    font-size: 50px;
+}
+
+.ig2 .page{
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    
+}
+
+.ig2 img{
+    width: 25%;
+    margin: 0;
+    padding: 0;
+}
+
+.end{    
+    margin: 0;
+    background-image: url(/作業_貓網/asset\ 19.jpeg);
+    text-align: center; 
+    padding: 50px;
+    color: white;
+}
+.end .page{
+    display: flex;
+    font-size: 40px;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    margin-left:10px ;
+}
+.end .page p{
+    font-size: 50px;
+}
+.end .page img{
+    margin-right: 30px;
+}
+.end .top2{
+    display: flex;
+    justify-content: center;
+    margin: 30px;
+}
+.end .top2 i{
+    width: 20px;
+    font-size: 20px;
+    margin: 3px;
+    padding: 15px;
+    color: white;
+}
+.end p{
+    font-size: 15px;
+    margin: 15px;
+}
+.end .top3{
+    margin-top: 40px;
+}
+
+.phone{
+    position: fixed;
+    z-index: 999;
+    bottom: 20px;
+    left: 20px;
+    background-color: white;
+    border-radius: 100%;
+    box-shadow:0 2px 8px #999;
+}
+.phone i{
+    font-size: 40px;
+    padding: 20px;
+    color: #FF9933;
+}
+.arrow{
+    position: fixed;
+    z-index: 999;
+    background-color: #FF9933;
+    border-radius: 2px;
+    color: #FF9933;
+    right: 20px;
+    bottom: 80px;
+}
+.arrow i{
+    padding: 22px;
+    color: white;
+    font-weight:bolder;
+}
