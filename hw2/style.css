@@ -48,7 +48,7 @@
 .header{
     width: 1200px;
     display: flex;
-    border: 1px solid black;
+    /* border: 1px solid black; */
     justify-content: space-between;
     align-items: center;
 }
@@ -97,7 +97,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    border: 1px solid black;
+    /* border: 1px solid black; */
 }
 .cat{
     background-image: url(img/asset\ 9.jpeg);
@@ -105,7 +105,7 @@
     background-position: center;
 }
 .need{
-    border: 1px solid orangered;
+    /* border: 1px solid orangered; */
 }
 .need .p1{
     color: #535353;
@@ -209,7 +209,7 @@
     justify-content: center;
     width: 1200px;
     display: flex;
-    border: 1px solid black;
+    /* border: 1px solid black; */
     margin: 0px;
 }
 .pa2{
@@ -221,7 +221,7 @@
     padding-top: 0px;
     margin: 0px;
     /* width: 100%; */
-    border: 1px solid black;
+    /* border: 1px solid black; */
     padding-bottom: 20px;
 }
 
@@ -278,7 +278,7 @@
 }
 .save .page{
     /* height: 500px; */
-    border: 1px solid black;
+    /* border: 1px solid black; */
 }
 .save img{
     width: 470px;
@@ -342,7 +342,7 @@
     
 }
 .evnts{
-    border: 2px solid black;
+    /* border: 2px solid black; */
 }
 .picture4{
     background-image: url(img/asset\ 13.jpeg);
