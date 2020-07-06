@@ -237,6 +237,10 @@
     
 }
 .lp .picture1:hover{
+    color: #FFFFFF;
+    -webkit-filter:brightness(.8);
+}
+.lp .e1:hover{
     color: #FF9933;
 }
 .picture2{
@@ -249,6 +253,10 @@
     color: #FFFFFF;
 }
 .lp .picture2:hover{
+    color: #FFFFFF;
+    -webkit-filter:brightness(.8);
+}
+.lp .e2:hover{
     color: #FF9933;
 }
 .picture3{
@@ -261,7 +269,12 @@
     color: #FFFFFF;
 }
 .lp .picture3:hover{
+    color: #FFFFFF;
+    -webkit-filter:brightness(.8);
+}
+.lp .e3:hover{
     color: #FF9933;
+    -webkit-filter:brightness(100%);
 }
 .lp{
     background-color: #F9F9F9;
