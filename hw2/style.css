@@ -88,7 +88,12 @@
     justify-content: space-between;
     display: flex;
 }
-.menu p:hover{
+.menu a{
+    color: gray;
+    text-decoration: none;
+    /* 文字裝飾 */
+}
+.menu a:hover{
     border-bottom: 1px solid orange;
     /* padding: 5px; */
 }
@@ -103,8 +108,10 @@
     background-image: url(img/asset\ 9.jpeg);
     height: 600px;
     background-position: center;
+    /* border: 2px solid black; */
 }
 .need{
+    /* border: 2px solid black; */
     /* border: 1px solid orangered; */
 }
 .need .p1{
@@ -125,19 +132,17 @@
     margin: 0;
 }
 .need .p4{
-    width: 231px;
-    height: 65px;
+    display: block;
+    width: 200px;
     /* padding: 0px 5px; */
     font-size: 15px;
     color:#FFFFFF;
-    background-color: orangered;
-    /* border: 2px solid #FF9933; */
-    display: flex;
+    background-color: #FF9933;
+    /* border: 2px solid black; */
     /* margin-left: 555; */
-    align-items: center;
-    text-align: center;
-    padding-left: 25%;
-    
+    padding:25px 40px;
+    margin-top:40px;
+    text-decoration: none;
 }
 .need .p4:hover{
     background-color: black;
@@ -147,6 +152,9 @@
     font-size: 15px;
     color: #FFFFFF;
     transition: 0.3s;
+}
+.girl .page img{
+    width: 90%;
 }
 .girl .p1{
     color: #535353;
@@ -176,24 +184,21 @@
 }
 
 .girl .p5{
-    width: 231px;
-    height: 65px;
-    padding: 0px 5px;
+    
+    display: block;
+    width: 200px;
+    /* padding: 0px 5px; */
     font-size: 15px;
     color:#FFFFFF;
-    background-color: orangered;
-    /* border: 2px solid #FF9933; */
-    display: flex;
-    margin-left: 555;
-    align-items: center;
-    text-align: center;
-    padding-left: 25%;
-    
+    background-color: #FF9933;
+    /* border: 2px solid black; */
+    /* margin-left: 555; */
+    padding:25px 40px;
+    margin-top:40px;
+    text-decoration: none;
 }
 .girl .p5:hover{
     background-color: black;
-    width: 231px;
-    height: 65px;
     /* padding: 231px 70px; */
     font-size: 15px;
     color: #FFFFFF;
@@ -322,37 +327,24 @@
 }
 
 .with .vo{
-    /* width: 335px;
-    height: 70px; */
-    /* padding: 0px 5px;
-    font-size: 36px;
+    display: block;
+    width: 200px;
+    /* padding: 0px 5px; */
+    font-size: 15px;
     color:#FFFFFF;
-    background-color: orangered; */
-    /* border: 2px solid #FF9933; */
-    /* display: flex;
-    margin-left: 555;
-    align-items: center;
-    text-align: center; */
-    /*padding-left: 25%; */
-
-    padding: 0px 5px;
-    font-size: 36px;
-    color:#FFFFFF;
-    background-color: orangered;
-    display: flex;
-    margin-left: 555;
+    background-color: #FF9933;
+    /* border: 2px solid black; */
+    /* margin-left: 555; */
+    padding:25px 40px;
+    margin-top:40px;
+    text-decoration: none;
     
 }
 .with .vo:hover{
     background-color: black;
-    /* width: 335px;
-    height: 70px; */
-    /* padding: 231px 70px; */
-    font-size: 36px;
     color: #FFFFFF;
     transition: 0.3s;
-
-    
+ 
 }
 .evnts{
     /* border: 2px solid black; */
@@ -526,8 +518,8 @@
     
 }
 .ig .page{
-    width: 100%;
-    justify-content: space-evenly;
+    display: flex;
+    justify-content: space-around;
     margin: 90px;
 }
 .ig .page p{
