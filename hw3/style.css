@@ -4,11 +4,11 @@
     list-style: none;
     font-family: 'PT Sans', sans-serif;
 }
-.header .item-group{
+.header .member-bgcolor{
     background-color:#679509 ;
     border: 2px solid black;
 }
-.header .item-width{
+.header .member-width{
     width: 1200px;
     color: #fff;
     display: flex;
@@ -19,22 +19,19 @@
 .header .txt{
     padding: 15px 5px;
     font-size: 14px;
-    border: 2px solid black;
 }
 .header .link ul{
     display: flex;
     height: 100%;
     align-items: center;
-    border: 2px solid black;
 }
 .header .link ul li{
     padding: 0 27px;
     position: relative;
-    border: 2px solid black;
 }
 .header .link ul a:hover{
     color: #c7ed79;
-    border: 2px solid black;
+    
 }
 .header .link ul li + li::before{
     content: '';
@@ -42,13 +39,13 @@
     height: 100%;
     position: absolute;
     left: 0;
-    border: 2px solid black;
+
 }
 .header .link ul a{
     text-decoration: none;
     color: #fff;
     font-size: 12px;
-    border: 2px solid black;
+    
 }
 .header .nav{
     width: 1200px;
@@ -56,26 +53,27 @@
     justify-content: space-between;
     margin: auto;
     padding: 15px 0;
-    border: 2px solid black;
 }
 .header .nav-btn ul{
     display: flex;
     text-decoration: none;
     height: 100%;
     align-items: center;
-    border: 2px solid black;
 }
 .header .nav-btn ul li{
     padding: 0 20px;
-    border: 2px solid black;
 }
 .header .nav-btn ul li:first-child a{
     color: #679509;
-    border: 2px solid black;
 }
 .header .nav-btn ul li a{
     text-decoration: none;
     color: #A5A5A5;
     font-size: 14px;
-    border: 2px solid black;
+}
+
+.full{
+    background-image: url(/jasonhw/hw3/img/asset36.png);
+    height: 860px;
+    background-size: cover;
 }
