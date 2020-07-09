@@ -72,16 +72,20 @@
     font-size: 30px;
     color: #363636;
 }
+
 .green a{
-    display: block;
-    font-size: 16px;
     text-decoration: none;
-    background-color: #86AE34;
+    color: #FFF;
+    display: inline-block;
     padding: 25px;
-    color: #FFFFFF;
-    font-weight: 600;
-    margin-top: 20px;
-    width: 125px;
+    background-color: green;
+    background-image:linear-gradient(90deg,#000 100%, transparent 100%);
+    background-position: -170px 0 ;
+    background-repeat: no-repeat;
+    transition: 1s;
+}
+.green a:hover{
+    background-position: 0px 0;
 }
 .green{
     padding-top: 20%;
@@ -196,13 +200,20 @@
     font-family: Pacifico;
     padding-bottom: 30px;
 }
+
 .fruits a{
-    color: #FFFFFF;
-    font-size: 18px;
     text-decoration: none;
-    background-color: #86AE34;
+    color: #FFF;
+    display: inline-block;
     padding: 25px;
-    
+    background-color: green;
+    background-image:linear-gradient(90deg,#000 100%, transparent 100%);
+    background-position: -170px 0 ;
+    background-repeat: no-repeat;
+    transition: 1s;
+}
+.fruits a:hover{
+    background-position: 0px 0;
 }
 .page{
     height: 860px;
@@ -262,17 +273,25 @@
     color: #333333;
 }
 
+
 .latest .box .item .a1{
-    color: #FFFFFF;
     font-size: 18px;
     text-decoration: none;
-    background-color: #86AE34;
-    padding: 2px 9px 2px 9px;
+    color: #FFFFFF;
     display: inline-block;
     line-height: 31.5px;
     margin-bottom: 10px;
-    
+    padding: 2px 9px 2px 9px;
+    background-color: green;
+    background-image:linear-gradient(90deg,#000 100%, transparent 100%);
+    background-position: -170px 0 ;
+    background-repeat: no-repeat;
+    transition: 1s;
 }
+.latest .box .item .a1:hover{
+    background-position: 0px 0;
+}
+
 .latest .box .item .a2{
     font-size: 18px;
     color: #4F4F4F;
@@ -398,6 +417,24 @@
     font-size: 16px;
     padding: 15px 30px;
     margin: 0 15px;
+}
+.subscribe a{
+    font-size: 16px;
+    padding: 15px 30px;
+    margin: 0 15px;
+    text-decoration: none;
+    color: #FFFFFF;
+    display: inline-block;
+    line-height: 31.5px;
+    margin-bottom: 10px;
+    background-color: green;
+    background-image:linear-gradient(90deg,#000 100%, transparent 100%);
+    background-position: -170px 0 ;
+    background-repeat: no-repeat;
+    transition: 1s;
+}
+.subscribe a:hover{
+    background-position: 0px 0;
 }
 
 .my {
