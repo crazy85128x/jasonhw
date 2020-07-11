@@ -206,7 +206,9 @@
 }
 
 .int .tbox p {
+  
   margin: 5px;
+  
 }
 
 .int .tbox .rtop {
@@ -235,7 +237,14 @@
   /* background-color: black; */
   padding: 5px;
   display: inline-block;
+ 
 }
+.int .tbox .txt{
+  
+  left: 10px;
+  top: 10px;
+}
+
 
 .int .bb {
   position: absolute;
