@@ -252,6 +252,7 @@
   right: 100px;
 }
 
+
 .int .aa {
   width: 54px;
   position: relative;
@@ -290,6 +291,7 @@
   left: 100px;
 }
 
+
 .move .aa {
   -webkit-transform: translate(-815px, -100px);
   transform: translate(-815px, -100px);
@@ -304,3 +306,32 @@
   height: 750px;
   border: 1px solid black;
 }
+
+.mobig span {
+  font-size: 40px;
+  color: #333333;
+  font-weight: 1000;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+
+}
+
+.mobig span::after {
+  content: '';
+  width: 55px;
+  height: 5px;
+  background-color: black;
+  margin-top: 15px;
+}
+
