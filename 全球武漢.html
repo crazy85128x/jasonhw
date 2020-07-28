@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        td {
+            border: 1px solid #000;
+        }
+    </style>
+    <title>全球武漢</title>
+</head>
+
+<body>
+    <table>
+        <h1></h1>
+        <thead>
+            <tr>
+                <td>國家</td>
+                <td>確診</td>
+                <td>死亡</td>
+                <td>治癒</td>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>台灣</td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>美國</td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>巴西</td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>印度</td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>俄羅斯</td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>全部</td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+        </tbody>
+    </table>
+    <script>
+        //建立Virus資料，傳入Table中
+
+        //一種資料結構
+        var WorldData = [];
+        var one = {
+            country: '台灣',
+            confirmed_case: '455',
+            recover: '440',
+            death: '7'
+        };
+        var two = {
+            country: '美國',
+            confirmed_case: '3970000',
+            recover: '1160000',
+            death: '144000'
+        };
+        var three = {
+            country: '巴西',
+            confirmed_case: '2170000',
+            recover: '1470000',
+            death: '81597'
+        };
+        var four = {
+            country: '印度',
+            confirmed_case: '1190000',
+            recover: '753000',
+            death: '28732'
+        };
+        var five = {
+            country: '俄羅斯',
+            confirmed_case: '789000',
+            recover: '572000',
+            death: '12745'
+        };
+        var six = {
+            country: '全部',
+            confirmed_case: '811.95萬',
+            recover: '26.71萬',
+            death: '395.54萬'
+        }
+        WorldData.push(one, two, three, four, five, six);
+        console.log(WorldData);
+
+
+
+        ///第二
+        let title = document.querySelector('h1');
+        title.innerText = '全球肺炎統計表';
+
+        const World = [{
+            country: '台灣',
+            confirmed_case: '455',
+            recover: '440',
+            death: '7'
+        }, {
+            country: '美國',
+            confirmed_case: '3970000',
+            recover: '1160000',
+            death: '144000'
+        }, {
+            country: '巴西',
+            confirmed_case: '2170000',
+            recover: '1470000',
+            death: '81597'
+        }, {
+            country: '印度',
+            confirmed_case: '1190000',
+            recover: '753000',
+            death: '28732'
+        }, {
+            country: '俄羅斯',
+            confirmed_case: '789000',
+            recover: '572000',
+            death: '12745'
+        }, {
+            country: '全部',
+            confirmed_case: '811.95萬',
+            recover: '26.71萬',
+            death: '395.54萬'
+        }];
+
+        let parentNode = document.querySelectorAll('tbody tr');
+        parentNode.forEach(x => {
+            WorldData.forEach(y => {
+                if (x.firstElementChild.textContent == y.country) {
+                    for (let i = 0; i < x.children.length; i++) {
+                        x.children[i].textContent = Object.values(y)[i];
+                    }
+                }
+
+            })
+        })
+    </script>
+</body>
+
+</html>
