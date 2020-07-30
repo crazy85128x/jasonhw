@@ -12,6 +12,7 @@ function initMap() {
         url:'/JS/Google_map/cat.png'
     }
 
+    
     map.data.setStyle({
         icon:Image
     });
