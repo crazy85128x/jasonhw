@@ -1,0 +1,248 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <link rel='stylesheet' type='text/css' href='/js/fullcalendar/fullcalendar.css' />
+    <script type="text/javascript" src="js/fullcalendar/fullcalendar.min.js"></script>
+    <script src="/js/fullcalendar/jquery-ui.custom.min.js"></script>
+    <script src="/js/fullcalendar/gcal.js"></script>
+    <!--結合Google使用-->
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+        integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+
+    <title>Hello, world!</title>
+    <style type="text/css">
+        .calendar {
+            width: 100%;
+            height: 100%;
+            background: #fff;
+            box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            /* border: 1px solid black; */
+            
+        }
+        
+        .body-list ul {
+            width: 100%;
+            font-family: arial;
+            font-weight: bold;
+            font-size: 14px;
+            /* border: 1px solid black; */
+        }
+
+        .body-list ul li {
+            width: 14.28%;
+            height: 36px;
+            line-height: 36px;
+            list-style-type: none;
+            display: block;
+            box-sizing: border-box;
+            float: left;
+            /* text-align: center; */
+            /* border: 1px solid black; */
+        }
+
+        .lightgrey {
+            color: #a8a8a8;
+            /*浅灰色*/
+        }
+
+        .darkgrey {
+            color: black;
+            
+            /*深灰色*/
+        }
+
+        .green {
+            color: red;
+            /*绿色*/
+            
+        }
+
+        .greenbox {
+            border: 1px solid #6ac13c;
+            background: #e9f8df;
+            /*浅绿色背景*/
+            
+        }
+        
+        .body-list li{
+            border: 1px solid #a8a8a8;
+            
+        }
+        .body-list li:hover{
+            border: 1px solid #bd09c4;
+            background-color: #ff6ca4;
+        }
+        
+    </style>
+</head>
+
+<body>
+    <div class="calendar ">
+        <div class="title">
+            <h1 class="green" id="calendar-title">Month</h1>
+            <h2 class="green small" id="calendar-year">Year</h2>
+            <div class="d-flex justify-content-between">
+                <button href="" id="prev">◀ Prev</button>
+                <button href="" id="next">Next ▶</button>
+                <!-- <button type="button" class="fc-today-button fc-button fc-state-default fc-corner-left fc-corner-right fc-state-disabled" disabled="">today</button> -->
+            </div>
+        </div>
+        
+        <div class="body d-flex flex-column">
+            <div class="lightgrey body-list">
+                <ul class="">
+                    <li>MON</li>
+                    <li>TUE</li>
+                    <li>WED</li>
+                    <li>THU</li>
+                    <li>FRI</li>
+                    <li>SAT</li>
+                    <li>SUN</li>
+                </ul>
+            </div>
+            <div class="darkgrey body-list">
+                <ul id="days">
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        var month_olympic = [31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
+        var month_normal = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
+        var month_name = ["January", "Febrary", "March", "April", "May", "June", "July", "Auguest", "September", "October", "November", "December"];
+
+        var holder = document.getElementById("days");
+        var prev = document.getElementById("prev");
+        var next = document.getElementById("next");
+        var ctitle = document.getElementById("calendar-title");
+        var cyear = document.getElementById("calendar-year");
+
+        // 創建一個Date對象來獲取當前的日期時間，並通過getFullYear()方法來獲取當前年份，getMonth()方法來獲取月份，getDate()方法來獲取當前日期。
+        var my_date = new Date();
+        var my_year = my_date.getFullYear();
+        var my_month = my_date.getMonth();
+        var my_day = my_date.getDate();
+
+        //獲取某年某月第一天是星期幾
+        function dayStart(month, year) {
+            var tmpDate = new Date(year, month, 1);
+            return (tmpDate.getDay());
+        }
+
+        //計算某年是不是潤年，通過求年份除以4的餘数
+        function daysMonth(month, year) {
+            var tmp = year % 4;
+            if (tmp == 0) {
+                return (month_olympic[month]);
+            }
+            else {
+                return (month_normal[month]);
+            }
+        }
+
+        function refreshDate() {
+            var str = "";
+            var totalDay = daysMonth(my_month, my_year); //獲取這個月的總共有幾天
+            var firstDay = dayStart(my_month, my_year); //獲取這個月的第一天是星期幾
+            var myclass;
+            for (var i = 1; i < firstDay; i++) {
+                str += "<li></li>"; //為起始日之前的日期創建空白區
+            }
+            for (var i = 1; i <= totalDay; i++) {
+                if ((i < my_day && my_year == my_date.getFullYear() && my_month == my_date.getMonth()) || my_year < my_date.getFullYear() || (my_year == my_date.getFullYear() && my_month < my_date.getMonth())) {
+                    myclass = " class='lightgrey'"; //在這個日期前都以淺灰色呈現
+                } else if (i == my_day && my_year == my_date.getFullYear() && my_month == my_date.getMonth()) {
+                    myclass = " class='green'' greenbox'"; //當天日期以紅色顯示
+                } else {
+                    myclass = " class='darkgrey'"; //當天以後的日期以深灰色字體顯示
+                }
+                str += "<li" + myclass + ">" + i + "</li>"; //創造日期節點
+            }
+            holder.innerHTML = str; //顯示日期
+            ctitle.innerHTML = month_name[my_month]; //顯示英文的月份
+            cyear.innerHTML = my_year; //年份的顯示
+        }
+        // refreshDate();
+
+        prev.onclick = function (e) {
+            e.preventDefault();
+            my_month--;
+            if (my_month < 0) {
+                my_year--;
+                my_month = 11;
+            }
+            refreshDate();
+        }
+        next.onclick = function (e) {
+            e.preventDefault();
+            my_month++;
+            if (my_month > 11) {
+                my_year++;
+                my_month = 0;
+            }
+            refreshDate();
+        }
+        refreshDate();
+    </script>
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+        integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+        crossorigin="anonymous"></script>
+    <!-- Code injected by live-server -->
+    <script type="text/javascript">
+        // <![CDATA[  <-- For SVG support
+        if ('WebSocket' in window) {
+            (function () {
+                function refreshCSS() {
+                    var sheets = [].slice.call(document.getElementsByTagName("link"));
+                    var head = document.getElementsByTagName("head")[0];
+                    for (var i = 0; i < sheets.length; ++i) {
+                        var elem = sheets[i];
+                        var parent = elem.parentElement || head;
+                        parent.removeChild(elem);
+                        var rel = elem.rel;
+                        if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
+                            var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
+                            elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
+                        }
+                        parent.appendChild(elem);
+                    }
+                }
+                var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
+                var address = protocol + window.location.host + window.location.pathname + '/ws';
+                var socket = new WebSocket(address);
+                socket.onmessage = function (msg) {
+                    if (msg.data == 'reload') window.location.reload();
+                    else if (msg.data == 'refreshcss') refreshCSS();
+                };
+                if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
+                    console.log('Live reload enabled.');
+                    sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
+                }
+            })();
+        }
+        else {
+            console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
+        }
+	// ]]>
+    </script>
+</body>
+
+</html>
