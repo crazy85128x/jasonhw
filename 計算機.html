@@ -1,0 +1,158 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+        integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+
+    <title>Hello, 醜男!</title>
+    
+</head>
+
+<body>
+    <h1>Hello, 醜男!</h1>
+    <table border=1>
+        <tr>
+            <td align="center" colspan="6">
+                <input align="right" type="text" value="0" id="box" />
+            </td>
+        </tr>
+        <tr>
+            <td> <input id="mAdd" type="button" value="M+" onClick="buttonM('M+')"> </td>
+            <td> <input id="mMinus" type="button" value="M-" onClick="buttonM('M-')"> </td>
+            <td> <input id="mC" type="button" value="MC" onClick="buttonM('MC')"> </td>
+            <td> <input id="mR" type="button" value="MR" onClick="buttonM('MR')"> </td>
+        </tr>
+
+
+        <tr align="center">
+            <td> <input type="button" value="7" onClick="numBtn('7')"> </td>
+            <td> <input type="button" value="8" onClick="numBtn('8')"> </td>
+            <td> <input type="button" value="9" onClick="numBtn('9')"> </td>
+            <td> <input type="button" value="+" onClick="operBtn('+')"> </td>
+        </tr>
+
+        <tr align="center">
+            <td> <input type="button" value="4" onClick="numBtn('4')"> </td>
+            <td> <input type="button" value="5" onClick="numBtn('5')"> </td>
+            <td> <input type="button" value="6" onClick="numBtn('6')"> </td>
+            <td> <input type="button" value="-" onClick="operBtn('-')"> </td>
+        </tr>
+
+        <tr align="center">
+            <td> <input type="button" value="1" onClick="numBtn('1')"> </td>
+            <td> <input type="button" value="2" onClick="numBtn('2')"> </td>
+            <td> <input type="button" value="3" onClick="numBtn('3')"> </td>
+            <td> <input type="button" value="*" onClick="operBtn('*')"> </td>
+        </tr>
+
+        <tr align="center">
+            <td> <input type="button" value="0" onClick="numBtn('0')"> </td>
+            <td> <input type="button" value="." onClick="numBtn('.')"> </td>
+            <td> <input type="button" value="=" onClick="equal()"> </td>
+            <td> <input type="button" value="/" onClick="operBtn('/')"> </td>
+        </tr>
+    </table>
+
+    <script>
+        var temp = 0;  
+        var strOper = 0;  
+        var valueM = 0;  
+        function numBtn(str) {
+
+            if (strOper == null) {
+                document.getElementById("box").value = str;
+                strOper = 0;
+                return;
+            };
+
+            if (document.getElementById("box").value == 0) {
+                document.getElementById("box").value = str;
+            } else {
+                document.getElementById("box").value += str;
+            }
+
+        }
+
+
+        //運算符號
+
+        function operBtn(str) {
+            equal();
+
+            valueA = document.getElementById("box").value;
+            strOper = str;
+
+            document.getElementById("box").value = 0;
+        }
+
+        function equal() {
+
+            switch (strOper) {
+                case '+':
+                    document.getElementById("box").value = parseFloat(valueA) + parseFloat(document.getElementById("box").value);
+                    break;
+                case '-':
+                    document.getElementById("box").value = parseFloat(valueA) - parseFloat(document.getElementById("box").value);
+                    break;
+                case '*':
+                    document.getElementById("box").value = parseFloat(valueA) * parseFloat(document.getElementById("box").value);
+                    break;
+                case '/':
+                    document.getElementById("box").value = parseFloat(valueA) / parseFloat(document.getElementById("box").value);
+                    break;
+                default:
+                    break;
+            }
+
+            temp = null;
+            strOper = null;
+        }
+        function buttonM(str) {
+
+            switch (str) {
+                case 'M+':
+                    valueM += parseFloat(document.getElementById("box").value);
+                    break;
+                case 'M-':
+                    valueM -= parseFloat(document.getElementById("box").value);
+                    break;
+                case 'MC':
+                    temp = 0;
+                    strOper = 0;
+                    valueM = 0;
+                    document.getElementById("box").value = '0';
+                    break;
+                case 'MR':
+                    document.getElementById("box").value = parseFloat(valueM);
+
+                    temp = null;
+                    strOper = null;
+                    break;
+                default:
+                    break;
+            }
+
+        }
+    </script>
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+        integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
