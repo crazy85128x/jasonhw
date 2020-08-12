@@ -11,53 +11,62 @@
         integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
 
     <title>Hello, 醜男!</title>
-    
+    <style type="text/css"> 
+        .s{
+            display: flex;
+            justify-content: center;
+            text-align: center;
+        }
+    </style>
 </head>
 
 <body>
-    <h1>Hello, 醜男!</h1>
-    <table border=1>
-        <tr>
-            <td align="center" colspan="6">
-                <input align="right" type="text" value="0" id="box" />
-            </td>
-        </tr>
-        <tr>
-            <td> <input id="mAdd" type="button" value="M+" onClick="buttonM('M+')"> </td>
-            <td> <input id="mMinus" type="button" value="M-" onClick="buttonM('M-')"> </td>
-            <td> <input id="mC" type="button" value="MC" onClick="buttonM('MC')"> </td>
-            <td> <input id="mR" type="button" value="MR" onClick="buttonM('MR')"> </td>
-        </tr>
-
-
-        <tr align="center">
-            <td> <input type="button" value="7" onClick="numBtn('7')"> </td>
-            <td> <input type="button" value="8" onClick="numBtn('8')"> </td>
-            <td> <input type="button" value="9" onClick="numBtn('9')"> </td>
-            <td> <input type="button" value="+" onClick="operBtn('+')"> </td>
-        </tr>
-
-        <tr align="center">
-            <td> <input type="button" value="4" onClick="numBtn('4')"> </td>
-            <td> <input type="button" value="5" onClick="numBtn('5')"> </td>
-            <td> <input type="button" value="6" onClick="numBtn('6')"> </td>
-            <td> <input type="button" value="-" onClick="operBtn('-')"> </td>
-        </tr>
-
-        <tr align="center">
-            <td> <input type="button" value="1" onClick="numBtn('1')"> </td>
-            <td> <input type="button" value="2" onClick="numBtn('2')"> </td>
-            <td> <input type="button" value="3" onClick="numBtn('3')"> </td>
-            <td> <input type="button" value="*" onClick="operBtn('*')"> </td>
-        </tr>
-
-        <tr align="center">
-            <td> <input type="button" value="0" onClick="numBtn('0')"> </td>
-            <td> <input type="button" value="." onClick="numBtn('.')"> </td>
-            <td> <input type="button" value="=" onClick="equal()"> </td>
-            <td> <input type="button" value="/" onClick="operBtn('/')"> </td>
-        </tr>
-    </table>
+    <div class="s">
+        
+        <table border=1>
+            
+            <tr>
+                <td align="center" colspan="6">
+                    <input align="right" type="text" value="0" id="box" />
+                </td>
+            </tr>
+            <tr>
+                <td> <input id="mAdd" type="button" value="M+" onClick="buttonM('M+')"> </td>
+                <td> <input id="mMinus" type="button" value="M-" onClick="buttonM('M-')"> </td>
+                <td> <input id="mC" type="button" value="MC" onClick="buttonM('MC')"> </td>
+                <td> <input id="mR" type="button" value="MR" onClick="buttonM('MR')"> </td>
+            </tr>
+    
+    
+            <tr align="center">
+                <td> <input type="button" value="7" onClick="numBtn('7')"> </td>
+                <td> <input type="button" value="8" onClick="numBtn('8')"> </td>
+                <td> <input type="button" value="9" onClick="numBtn('9')"> </td>
+                <td> <input type="button" value="+" onClick="operBtn('+')"> </td>
+            </tr>
+    
+            <tr align="center">
+                <td> <input type="button" value="4" onClick="numBtn('4')"> </td>
+                <td> <input type="button" value="5" onClick="numBtn('5')"> </td>
+                <td> <input type="button" value="6" onClick="numBtn('6')"> </td>
+                <td> <input type="button" value="-" onClick="operBtn('-')"> </td>
+            </tr>
+    
+            <tr align="center">
+                <td> <input type="button" value="1" onClick="numBtn('1')"> </td>
+                <td> <input type="button" value="2" onClick="numBtn('2')"> </td>
+                <td> <input type="button" value="3" onClick="numBtn('3')"> </td>
+                <td> <input type="button" value="*" onClick="operBtn('*')"> </td>
+            </tr>
+    
+            <tr align="center">
+                <td> <input type="button" value="0" onClick="numBtn('0')"> </td>
+                <td> <input type="button" value="." onClick="numBtn('.')"> </td>
+                <td> <input type="button" value="=" onClick="equal()"> </td>
+                <td> <input type="button" value="/" onClick="operBtn('/')"> </td>
+            </tr>
+        </table>
+    </div>
 
     <script>
         var temp = 0;  
@@ -79,8 +88,6 @@
 
         }
 
-
-        //運算符號
 
         function operBtn(str) {
             equal();
