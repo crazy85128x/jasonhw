@@ -1,0 +1,180 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>拉拉拉</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+    integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous" />
+  <style>
+    .history span {
+      display: inline-block;
+      padding: 20px;
+      border-radius: 10px;
+    }
+
+    .history li p {
+      margin: 0;
+      margin-left: 5px;
+      font-weight: 700;
+      font-size: 32px;
+
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container py-5">
+    <h1 class="text-center">1A2B小小小遊戲</h1>
+    <div class="row">
+      <div class="col-12 btn-group" role="group" aria-label="Basic example">
+        <button type="button" class="btn btn-outline-primary">play</button>
+        <button type="button" class="btn btn-outline-primary" disabled>
+          報仇雪恨
+        </button>
+        <button type="button" class="btn btn-outline-primary" disabled>
+          作弊一下
+        </button>
+      </div>
+    </div>
+    <div class="row my-2">
+      <ul class="col-12 list-group history px-3"></ul>
+    </div>
+    <div class="row">
+      <div class="col-12 input-group mb-3 mt-4">
+        <div class="input-group mb-3">
+          <span class="input-group-text" id="inputGroupFileAddon01">你猜猜看呀嘿嘿</span>
+          <input type="text" class="form-control" placeholder="請輸入四位不重覆數字" aria-label="Recipient's username"
+            aria-describedby="button-addon2" disabled />
+          <div class="input-group-append">
+            <button class="btn btn-primary" type="button" id="button-addon2" disabled>
+              $猜拉摟$
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script>
+    window.addEventListener('DOMContentLoaded', function () {
+      let start = document.querySelector('.btn-group button:nth-child(1)');
+      let reset = document.querySelector('.btn-group button:nth-child(2)');
+      let lookAnswer = document.querySelector(
+        '.btn-group button:nth-child(3)'
+      );
+      let input = document.querySelector('input.form-control');
+      let checkBtn = document.querySelector('.input-group-append .btn');
+      let history = document.querySelector('.history');
+      let answer = "";
+      start.addEventListener('click', function() {
+        turnBeginButton(false)
+        answer = setAnswer()
+      });
+      lookAnswer.addEventListener('click', function() {
+        window.alert(`告訴你是 【${answer}】，不可以說出去唷，否則你臉會變黑，跟你說你就信喔哈`);
+      });
+      checkBtn.addEventListener('click', function() {
+        let reply = input.value.trim();
+        checkAnswer(reply, answer);
+        input.value ="";
+      });
+      reset.addEventListener('click', function() {
+        if (window.confirm('想清楚喔?')) {
+          turnBeginButton(true);
+          input.value = '';
+          while (history.firstChild) {
+            history.removeChild(history.firstChild);
+          }
+        }
+      });
+      function turnBeginButton(beginBool) {
+        start.disabled = !beginBool;
+        reset.disabled = beginBool;
+        lookAnswer.disabled = beginBool;
+        input.disabled = beginBool;
+        checkBtn.disabled = beginBool;
+      }
+      function setAnswer() {
+        let answer = '';
+        while (answer.length < 4) {
+          let number = Math.floor(Math.random(0, 9) * 10);
+          if (answer.length === 0 || !answer.includes(number)) {
+            answer += number;
+          }
+          continue;
+        }
+        return answer;
+      }
+      function checkType(text) {
+        if (isNaN(text)) {
+          window.alert('你心中的數字');
+          return false;
+        }
+        if (text.length !== 4) {
+          window.alert('只能XXXX');
+          return false;
+        }
+        let filterString = text
+          .split('')
+          .filter((item, index, arr) => arr.indexOf(item) === index);
+        if (filterString.length < 4) {
+          window.alert('不可重複數字');
+          return false;
+        }
+        return true;
+      }
+      function checkAnswer(input, answer) {
+        let A = 0;
+        let B = 0;
+        for (let i = 0; i < input.length; i++) {
+          if (input[i] === answer[i]) {
+            A++;
+          }
+          for (let j = 0; j < answer.length; j++) {
+            if (input[i] === answer[j]) {
+              B++;
+            }
+          }
+        }
+        B -= A;
+        if (checkType(input) === true) {
+          createHistory(A, B);
+        }
+        if (A === 4) {
+          window.alert('阿不就很聰明，再來啊XD');
+        }
+      }
+      function createHistory(a, b) {
+        let record = document.createElement('li');
+        let badge = document.createElement('span');
+        let p = document.createElement('p');
+        history.appendChild(record);
+        record.appendChild(badge);
+        record.appendChild(p);
+        badge.textContent = `${a}A${b}B`;
+        p.textContent = input.value;
+        record.classList.add('list-group-item');
+        badge.classList.add('badge');
+        badge.classList.add('badge-pill');
+        badge.classList.add('badge-danger');
+        p.classList.add('d-inline-block');
+        if (a === 4) {
+          badge.classList.replace('badge-danger', 'badge-success');
+        }
+      }
+    });
+  </script>
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+    integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+    integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+    crossorigin="anonymous"></script>
+</body>
+
+</html>
