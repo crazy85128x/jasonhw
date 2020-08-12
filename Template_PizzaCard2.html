@@ -4,19 +4,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>披薩世界</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <title>我愛披薩</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+        integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
     <style>
         .card {
             border: 1px solid black;
             margin-bottom: 30px;
             overflow: hidden;
         }
-        
+
         .headshot {
             overflow: hidden;
         }
-        
+
         .card-title {
             color: white;
             background-color: black;
@@ -24,30 +25,30 @@
             border-radius: 5px;
             padding: 5px 15px 5px 15px;
         }
-        
+
         .card-body {
             background-color: #ffbf67;
         }
-        
+
         .card:hover {
             box-shadow: 8px 8px 15px #808080;
             transform: translate(5px, 5px);
         }
-        
+
         .card:hover img {
             transform: scale(1.2);
             transition: transform 0.5s;
         }
-        
+
         .card:not(:hover) img {
             transform: scale(1, 1);
             transition: transform 0.3s;
         }
-        
+
         .card:hover .card-body {
             background-color: lightgreen !important;
         }
-        
+
         .card:hover .card-title {
             color: black;
             background-color: white !important;
@@ -57,7 +58,7 @@
 
 <body>
     <div class='container-fluid'>
-        <div class='jumbotron'>Pizza Template</div>
+        <div class='jumbotron'>JASON Pizza Template</div>
         <div class='row'>
         </div>
     </div>
@@ -69,12 +70,12 @@
                 <h5 class="card-title"></h5>
                 <p class="card-text"></p>
                 <p class="price"><span></span><span></span></p>
-                <button href="#" class="btn btn-primary">食物內容</a>
+                <button href="#" class="btn btn-primary">食物秘密</a>
             </div>
         </div>
     </template>
-    <!-- Modal -->
-    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="false">
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="false">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
@@ -93,9 +94,15 @@
             </div>
         </div>
     </div>
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+        integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+        crossorigin="anonymous"></script>
     <script>
         let row = document.getElementsByClassName('row')[0];
         var xhr = new XMLHttpRequest();
@@ -106,7 +113,7 @@
         function getData() {
             xhr.open('GET', 'https://raw.githubusercontent.com/JoeLeeOatmeal/FileStorage/master/Pizza.json');
             xhr.send();
-            xhr.onload = function() {
+            xhr.onload = function () {
                 pizzaArray = JSON.parse(this.responseText).pizza;
                 render(pizzaArray);
             }
@@ -117,15 +124,15 @@
             pizzas.forEach(item => {
                 let cloneContent = templateCard.content.cloneNode(true);
 
-                // data
+
                 cloneContent.querySelector('.card-body .card-title').innerText = item["name"];
                 cloneContent.querySelector('.card-body .card-text').innerText = item["name-en"];
                 cloneContent.querySelector('.card img').src = item["image"];
                 cloneContent.querySelector('.card-body .price span:first-child').innerText = item["price"]["large"];
                 cloneContent.querySelector('.card-body .price span:last-child').innerText = item["price"]["small"];
 
-                // modal
-                cloneContent.querySelector('button').addEventListener('click', function() {
+
+                cloneContent.querySelector('button').addEventListener('click', function () {
                     this.setAttribute('data-toggle', 'modal');
                     this.setAttribute('data-target', '#exampleModal');
 
@@ -134,7 +141,7 @@
                     modal.querySelector('#pizzaImage').src = item["image"];
                 });
 
-                //append into row
+
                 row.appendChild(cloneContent);
 
 
