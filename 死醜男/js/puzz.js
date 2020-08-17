@@ -10,7 +10,7 @@
 		this.size = size;
 		this.wrap = wrap;
 		this.url = url;
-		this.end = end;//标识是否最后一个
+		this.end = end;
 		this.index = index + 1;
 		this.x = 0;
 		this.y = 0;
